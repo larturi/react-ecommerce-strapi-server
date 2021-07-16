@@ -9,20 +9,18 @@ module.exports = {
     const { token, products, idUser, addressShipping } = ctx.request.body;
 
     let totalPayment = 0;
-
     products.forEach((product) => {
-      totalPayment += product.price;
+      totalPayment = totalPayment + product.price;
     });
 
     const charge = await stripe.charges.create({
       amount: totalPayment * 100,
-      currency: "usd",
+      currency: "eur",
       source: token.id,
-      description: `IdUser #: ${idUser}`,
+      description: `ID Usuario: ${idUser}`,
     });
 
     const createOrder = [];
-
     for await (const product of products) {
       const data = {
         game: product.id,
@@ -31,16 +29,13 @@ module.exports = {
         idPayment: charge.id,
         addressShipping,
       };
-
-      const validData = await createStrapi.entityValidator.validateEntity(
+      const validData = await strapi.entityValidator.validateEntityCreation(
         strapi.models.order,
         data
       );
-
       const entry = await strapi.query("order").create(validData);
       createOrder.push(entry);
     }
-
     return createOrder;
   },
 };
