@@ -2,8 +2,8 @@ module.exports = ({ env }) => ({
   email: {
     provider: "sendmail",
     settings: {
-      defaultFrom: "myemail@protonmail.com",
-      defaultReplyTo: "myemail@protonmail.com",
+      defaultFrom: "noreply@gaming-app.com",
+      defaultReplyTo: "noreply@gaming-app.com",
     },
   },
 
