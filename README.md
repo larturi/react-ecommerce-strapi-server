@@ -15,5 +15,5 @@
 Start in development mode
 
 ```shell
-npm run dev
+npm run develop
 ```
