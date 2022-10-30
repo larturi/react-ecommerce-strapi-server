@@ -6,10 +6,10 @@ module.exports = ({ env }) => ({
       settings: {
         client: 'mysql',
         host: env('DATABASE_HOST', '127.0.0.1'),
-        port: env.int('DATABASE_PORT', 3306),
-        database: env('DATABASE_NAME', 'ecommerce-games-next'),
-        username: env('DATABASE_USERNAME', 'ecommercegames'),
-        password: env('DATABASE_PASSWORD', 'ye]aBuZYYf)4-*&'),
+        port: env.int('MYSQL_PORT'),
+        username: env('MYSQL_USER'),
+        password: env('MYSQL_PASSWORD'),
+        database: env('MYSQL_DATABASE'),
         ssl: env.bool('DATABASE_SSL', false),
       },
       options: {}

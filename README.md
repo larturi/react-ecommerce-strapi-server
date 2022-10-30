@@ -1,12 +1,15 @@
 # E-Commerce Strapi Admin
 
-### Next, React, Strapi, Node and Mongo
+## Next, React, Strapi, Node and Mongo
 
 Start in development mode
 
 ```shell
-npm run develop
+nvm use 14.20.0
+
+yarn
+
+yarn develop
 ```
 
-##### Made with ❤️ by Leandro Arturi
-
+### Made with ❤️ by Leandro Arturi
